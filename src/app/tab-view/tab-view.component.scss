@@ -1,0 +1,51 @@
+@import '../../styles/common.scss';
+:host{
+    tab-wrapper{
+        display: flex;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        padding:1rem;
+        padding-bottom: 0;
+        align-items: center;
+        justify-content: center;
+        tab-item{
+            padding: 1rem 1.5rem;
+            color:transparentize($light-theme-foreground, .6);
+            position: relative;
+            text-align: center;
+            line-height: 1rem;
+            &.active{
+            &:after{
+                content: '';
+                position: absolute;
+                left:0;
+                width: 100%;
+                height: 1px;
+                bottom: 0rem;
+                opacity: .7;
+                background: $light-theme-accent;
+                box-shadow: 0 .2rem .5rem .1rem transparentize($light-theme-accent, .85);
+            }
+            }
+            .icon{
+                font-size: 2.5rem;
+                margin: 0;
+            }
+            &.active{
+            color:$light-theme-accent;
+            &:after{
+                content: '';
+                position: absolute;
+                left:0;
+                width: 100%;
+                height: 0rem;
+                border-bottom: 1px solid $light-theme-accent;
+                bottom: 0rem;
+                opacity: 1;
+                background: $light-theme-accent;
+                box-shadow: 0 .2rem .4rem .0rem transparentize($light-theme-accent, .5);
+                @extend .reveal-anim; 
+            }
+            }
+        }
+    }
+}

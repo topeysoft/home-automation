@@ -1,3 +1,6 @@
-<h1>
-  {{title}}
-</h1>
+<tsc-app class="{{appSvc.currentTheme}}">
+  <tsc-header>
+    <primary-selector [subHeaderText]="currentTab.title" [items]="rooms" key="name"></primary-selector>
+  </tsc-header>
+<tab-view [tabs]="tabs" [showText]="false" (tabChanged)="tabChange($event)"></tab-view>
+</tsc-app>

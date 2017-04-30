@@ -1,0 +1,13 @@
+   <tab-wrapper>
+       <tab-item (click)="tabClick(tab)" *ngFor="let tab of tabs;" [class.active]="tab.active" >
+          <div class="flex flex-column">
+                <i *ngIf="showIcon" class="icon {{tab.icon}}"></i>
+       <span *ngIf="showText"> {{tab.title}}</span>
+          </div>
+       
+   </tab-item>
+   </tab-wrapper>
+   <div  *ngFor="let tab of tabs;">
+    <dynamic-component *ngIf="tab.active" [componentData]="tab.data"></dynamic-component>
+   </div>
+   

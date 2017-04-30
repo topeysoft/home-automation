@@ -1,0 +1,33 @@
+
+@keyframes popOpen{
+    0%{
+        transform:scale(0,0);
+    }
+    90%{
+        transform:scale(1.2,1.2);
+    }
+    100%{
+        transform:scale(1,1);
+    }
+}
+
+@keyframes reveal{
+    from{
+        transform:scale(0,0);
+    }
+}
+
+.popOpen{
+    animation-name: popOpen;
+    animation-duration: 200ms;
+}
+.popClose{
+    animation-name: popOpen;
+    animation-duration: 200ms;
+    animation-direction: reverse;
+}
+
+.reveal-anim{
+    animation-name: reveal;
+    animation-duration: 200ms;
+}

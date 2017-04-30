@@ -1,0 +1,69 @@
+@import '../../styles/common.scss';
+:host{
+    font-family: 'Roboto-Light', sans-serif;
+    line-height: 1.2rem;
+    text-align: center;
+    select-wrapper{
+        position: relative;
+        display: block;
+        .active{
+     z-index: 100; 
+     display: flex;
+     flex-flow: column;
+ .header{
+     font-size: 1.2rem;
+    font-family: 'Roboto-Light', sans-serif;
+    
+ }
+ .sub-header{
+     margin-top: .3rem;
+     font-size: .7rem;
+     opacity: .3;  
+ } 
+ }   
+   
+ select-menu{
+     width:14rem;
+     height: auto;
+     max-height: 80vh;
+     overflow-x: hidden;
+     overflow-y: auto;
+     border:.1rem solid #eeeeee;
+     box-shadow: 0 0 1rem 0 rgba(0,0,0,0.1);
+     background: $light-theme-background;
+     display: none;
+     flex-flow: column;
+     position: absolute;
+     left:50%;
+     margin-left: -7rem;
+     top:-.5rem;
+     z-index: 300;
+     text-align: center;
+     menu-item{
+         padding: 1rem .5rem;
+         text-align: center;
+         font-size: 1.5rem;
+    font-family: 'Roboto-Light', sans-serif;
+     }
+
+     &.show{
+         display: flex;
+     }
+ }
+    }
+}
+.light-theme{
+    :host{
+    select-menu{
+        background: $light-theme-background;
+        menu-item.selected{
+            background-color: $light-theme-accent;
+            color:$light-theme-background;
+        }
+        menu-item:active{
+            background-color: $light-theme-darker-accent;
+            color:$light-theme-background;
+        }
+    }
+    }
+}

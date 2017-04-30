@@ -1,0 +1,9 @@
+<select-wrapper>
+<div class="active" (click)="activeClick()">
+    <span class="header">{{activeItem[key]}} <i class="ion-ios-arrow-down"></i></span>
+    <span class="sub-header">{{subHeaderText}}</span>
+</div>
+<select-menu>
+    <menu-item  (click)="itemClick(item)" *ngFor="let item of items;" [class.selected]="item.selected">{{item[key]}}</menu-item>
+</select-menu>
+</select-wrapper>
